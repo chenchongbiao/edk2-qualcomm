@@ -27,6 +27,24 @@ Depends: edk2-qcs6490,
 Description: Radxa EDK II meta-package for Radxa Dragon Q6A
  This is the meta-package for EDK II.
 
+Package: edk2-sc8280xp
+Architecture: all
+Section: admin
+Priority: optional
+Depends: edl-ng,
+         ${misc:Depends},
+Description: Radxa EDK II meta-package for Qualcomm SC8280XP
+ This package provides the prebuilt Qualcomm SC8280XP EDK II firmwares.
+
+Package: edk2-radxa-dragon-q8b
+Architecture: all
+Section: admin
+Priority: optional
+Depends: edk2-sc8280xp,
+         ${misc:Depends},
+Description: Radxa EDK II meta-package for Radxa Dragon Q8B
+ This is the meta-package for EDK II.
+
 Package: edk2-qcs9075
 Architecture: all
 Section: admin
@@ -59,6 +77,7 @@ Architecture: all
 Section: admin
 Priority: optional
 Depends: edk2-radxa-dragon-q6a,
+         edk2-radxa-dragon-q8b,
          ${misc:Depends},
 Description: Radxa EDK II meta-package for Radxa Dragon Midstream
  This is the meta-package for EDK II.
