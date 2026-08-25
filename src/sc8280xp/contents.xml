@@ -1,0 +1,303 @@
+<?xml version="1.0" ?>
+<contents>
+  <product_flavors cmm_pf_var="PRODUCT_FLAVORS">
+    <pf>
+      <name>dragon-q8b</name>
+      <component>
+        <name>common</name>
+        <flavor>dragon-q8b</flavor>
+      </component>
+      <component>
+        <name>adsp</name>
+        <flavor>dragon-q8b</flavor>
+      </component>
+      <component>
+        <name>cdsp</name>
+        <flavor>dragon-q8b</flavor>
+      </component>
+    </pf>
+  </product_flavors>
+  <product_info>
+    <product_name>Makena.WP.1.0</product_name>
+    <hlos_type cmm_var="HLOS_TYPE">WP</hlos_type>
+    <chipid cmm_var="CHIPID">sc8280x</chipid>
+  </product_info>
+  <builds_flat>
+    <build>
+      <name>common</name>
+      <role>common</role>
+      <chipset>sc8280x</chipset>
+      <build_id>.</build_id>
+      <windows_root_path>.\</windows_root_path>
+      <linux_root_path>./</linux_root_path>
+      <image_dir>common</image_dir>
+      <download_file cmm_file_var="QUP_BINARY" backup_partition="BACKUP_QUP" minimized="true">
+        <file_name>qupv3fw.elf</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="USB4FW_BINARY" backup_partition="BACKUP_usb4fw" minimized="true">
+        <file_name>usb4_uc_fw_image.elf</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file storage_type="spinor" minimized="true">
+        <file_name>zeros_5sectors.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file storage_type="spinor" minimized="true">
+        <file_name>zeros_33sectors.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file storage_type="spinor" minimized="true">
+        <file_name>eth_fw.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="MULTIIMGOEM_BINARY" backup_partition="BACKUP_MULTIIMGOEM" minimized="true">
+        <file_name>multi_image.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="MULTIIMGOEM_BINARY" ignore="true" storage_type="spinor" minimized="true">
+        <file_name>multi_image.mbn</file_name>
+        <file_path flavor="dragon-q8b">.</file_path>
+      </download_file>
+      <download_file ignore="true" storage_type="spinor" minimized="true">
+        <file_name>*.img</file_name>
+        <file_path flavor="dragon-q8b">.</file_path>
+      </download_file>
+      <download_file storage_type="spinor" minimized="true">
+        <file_name>*.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file storage_type="spinor" minimized="true">
+        <file_name>*.xml</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file storage_type="spinor" minimized="true">
+        <file_name>gpt_main0.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file storage_type="spinor" gpt_file="partition:0" minimized="true">
+        <file_name>gpt_both0.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <partition_file ignore="true" storage_type="spinor">
+        <file_name>rawprogram0.xml</file_name>
+        <file_path>.</file_path>
+      </partition_file>
+      <partition_file ignore="true" storage_type="spinor">
+        <file_name>rawprogram_unsparse0.xml</file_name>
+        <file_path>.</file_path>
+      </partition_file>
+      <partition_file storage_type="spinor">
+        <file_name>patch0.xml</file_name>
+        <file_path>.</file_path>
+      </partition_file>
+      <download_file cmm_file_var="APDP_BINARY" backup_partition="BACKUP_APDP" minimized="true">
+        <file_name>apdp.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file minimized="true">
+        <file_name>cdt_rs782_wp.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+    </build>
+    <build>
+      <name>apps</name>
+      <role>apps</role>
+      <chipset>sc8280x</chipset>
+      <build_id>APSS.WP_MK.1.0-14400-SC8280XRELSFNWZA-2</build_id>
+      <windows_root_path cmm_root_path_var="APPS_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="APPS_BUILDROOT">./</linux_root_path>
+      <image_dir>WP</image_dir>
+      <download_file cmm_file_var="APPSCONFIG_BINARY" backup_partition="BACKUP_PLAT" minimized="true">
+        <file_name>Fat12.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="TZAPPS_BINARY" backup_partition="BACKUP_TZAPPS" minimized="true">
+        <file_name>tzapps.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="SMBIOS_BINARY" backup_partition="BACKUP_PLAT" minimized="true">
+        <file_name>smbios.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="LOGFS_BINARY" minimized="true">
+        <file_name>fat_16MB_empty.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="SYSFW_VERSION_BINARY" minimized="true">
+        <file_name>SYSFW_VERSION.bin</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="EMMCDL_TOOL" minimized="true">
+        <file_name>emmcdl.exe</file_name>
+        <file_path>.</file_path>
+      </download_file>
+    </build>
+    <build>
+      <name>aop</name>
+      <role>aop</role>
+      <chipset>sc8280x</chipset>
+      <build_id>AOP.HO.3.0-00462-MAKENA-4</build_id>
+      <windows_root_path cmm_root_path_var="AOP_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="AOP_BUILDROOT">./</linux_root_path>
+      <image_dir>aop_proc</image_dir>
+      <download_file cmm_file_var="AOP_BINARY" backup_partition="BACKUP_AOP" minimized="true">
+        <file_name>aop.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+    </build>
+    <build>
+      <name>boot</name>
+      <role>boot</role>
+      <chipset>sc8280x</chipset>
+      <build_id>BOOT.MXF.1.1.c1-00167-MAKENA-1</build_id>
+      <windows_root_path cmm_root_path_var="BOOT_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="BOOT_BUILDROOT">./</linux_root_path>
+      <image_dir>boot_images</image_dir>
+      <download_file cmm_file_var="BOOT_BINARY" backup_partition="XBL" minimized="true">
+        <file_name>xbl.elf</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="BOOT_CONFIG" backup_partition="XBL_CONFIG" minimized="true">
+        <file_name>xbl_config.elf</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="DDRFW_BINARY" backup_partition="BACKUP_SHRM" minimized="true">
+        <file_name>shrm.elf</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="IMAGEFV_BINARY" backup_partition="BACKUP_ImageFv" minimized="true">
+        <file_name>imagefv.elf</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <device_programmer cmm_file_var="FIREHOSE_DDR_ELF" minimized="true">
+        <file_name>prog_firehose_ddr.elf</file_name>
+        <file_path>.</file_path>
+      </device_programmer>
+      <device_programmer cmm_file_var="FIREHOSE_LITE_ELF" firehose_type="lite" minimized="true">
+        <file_name>prog_firehose_lite.elf</file_name>
+        <file_path>.</file_path>
+      </device_programmer>
+    </build>
+    <build>
+      <name>tz</name>
+      <role>tz</role>
+      <chipset>sc8280x</chipset>
+      <build_id>TZ.XF.5.13-00238-MAKENAAAAAANAZT-1</build_id>
+      <short_build_path cmm_var="TZ_BUILDID">UANAANAA</short_build_path>
+      <windows_root_path cmm_root_path_var="TZ_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="TZ_BUILDROOT">./</linux_root_path>
+      <image_dir>trustzone_images</image_dir>
+      <download_file cmm_file_var="TZ_BINARY" backup_partition="BACKUP_TZ" minimized="true">
+        <file_name>tz.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="HYP_BINARY" backup_partition="BACKUP_HYP" minimized="true">
+        <file_name>hyp.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="HYP_TZ_BINARY" minimized="true">
+        <file_name>hyp.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="TZDEVCFG_BINARY" backup_partition="BACKUP_DEVCFG" minimized="true">
+        <file_name>devcfg_windows_hyp.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="TZDEVCFG_WIN_HYP_MBN" minimized="true">
+        <file_name>devcfg_windows_hyp.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="CMNLIB64_BINARY" ignore="true" pil_split="cmnlib64" minimized="true">
+        <file_name>cmnlib64.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="CMNLIB_BINARY" ignore="true" pil_split="cmnlib" minimized="true">
+        <file_name>cmnlib.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+    </build>
+    <build>
+      <name>adsp</name>
+      <role>adsp</role>
+      <chipset>sc8280x</chipset>
+      <build_id>ADSP.HT.5.6.c2-00037-MAKENA-1</build_id>
+      <windows_root_path cmm_root_path_var="ADSP_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="ADSP_BUILDROOT">./</linux_root_path>
+      <image_dir>adsp_proc</image_dir>
+      <download_file cmm_file_var="ADSP_BINARY" pil_split="adsp" minimized="true">
+        <file_name>adsp.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+    </build>
+    <build>
+      <name>cdsp</name>
+      <role>cdsp</role>
+      <chipset>sc8280x</chipset>
+      <build_id>CDSP.HT.2.6-00735.5-MAKENA-1</build_id>
+      <windows_root_path cmm_root_path_var="CDSP_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="CDSP_BUILDROOT">./</linux_root_path>
+      <image_dir>cdsp_proc</image_dir>
+      <download_file cmm_file_var="CDSP_BINARY" pil_split="cdsp" minimized="true">
+        <file_name>cdsp.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+    </build>
+    <build>
+      <name>cpucp</name>
+      <role>cpucp</role>
+      <chipset>sc8280x</chipset>
+      <build_id>CPUCP.FW.1.0-00025-MAKENA.EXT-3</build_id>
+      <windows_root_path cmm_root_path_var="CPUCP_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="CPUCP_BUILDROOT">./</linux_root_path>
+      <image_dir>cpucp_proc</image_dir>
+      <download_file cmm_file_var="CPUCP_BINARY" backup_partition="BACKUP_CPUCP" minimized="true">
+        <file_name>cpucp.elf</file_name>
+        <file_path>.</file_path>
+      </download_file>
+    </build>
+    <build>
+      <name>glance</name>
+      <role>glance</role>
+      <chipset>sc8280x</chipset>
+      <build_id>GLANCE.FW.2.1-00013-PROD-1</build_id>
+      <windows_root_path cmm_root_path_var="GLANCE_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="GLANCE_BUILDROOT">./</linux_root_path>
+      <image_dir>glance</image_dir>
+      <download_file cmm_file_var="GLANCE_BINARY" ignore="true" minimized="true">
+        <file_name>glance_app_checksum_strip.elf</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="GLANCE_BINARY" ignore="true" minimized="true">
+        <file_name>glance-bg2.elf</file_name>
+        <file_path>.</file_path>
+      </download_file>
+    </build>
+    <build>
+      <name>spss</name>
+      <role>spss</role>
+      <chipset>sc8280x</chipset>
+      <build_id>SPSS.A1.1.5-00046-MAKENA-2</build_id>
+      <windows_root_path cmm_root_path_var="SPSS_BUILDROOT">.\</windows_root_path>
+      <linux_root_path cmm_root_path_var="SPSS_BUILDROOT">./</linux_root_path>
+      <image_dir>spss_proc</image_dir>
+      <download_file cmm_file_var="SPMCP1P_BINARY" ignore="true" fat_file="true" minimized="true">
+        <file_name>spss1p.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+      <download_file cmm_file_var="SPMCP1T_BINARY" fat_file="true" minimized="true">
+        <file_name>spss1t.mbn</file_name>
+        <file_path>.</file_path>
+      </download_file>
+    </build>
+    <build>
+      <name>glue</name>
+      <role>glue</role>
+      <chipset>sc8280x</chipset>
+      <build_id>GLUE.MAKENA.WP.1.0-00307-NOOP_TEST-1</build_id>
+      <windows_root_path>.\</windows_root_path>
+      <linux_root_path>./</linux_root_path>
+      <image_dir>common</image_dir>
+    </build>
+  </builds_flat>
+</contents>
